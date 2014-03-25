@@ -2,7 +2,7 @@
 \lyxformat 413
 \begin_document
 \begin_header
-\textclass article
+\textclass book
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -25,7 +25,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize 12
-\spacing single
+\spacing other 1.5
 \use_hyperref false
 \papersize default
 \use_geometry true
@@ -43,10 +43,10 @@
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 1cm
-\topmargin 1.5cm
-\rightmargin 1cm
-\bottommargin 1.5cm
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
 \headheight 0cm
 \headsep 0cm
 \footskip 0cm
@@ -69,6 +69,21 @@
 
 \begin_layout Title
 Work Term Report
+\end_layout
+
+\begin_layout Author
+Mohammed A.
+ Chamma
+\end_layout
+
+\begin_layout Section*
+Introduction
+\end_layout
+
+\begin_layout Standard
+Hello my name is Mohammed.
+ I worked as a Research at Statistics Canada for 4 months.
+ I was part of the Modeling Division.
 \end_layout
 
 \end_body
