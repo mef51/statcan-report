@@ -81,9 +81,90 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-Hello my name is Mohammed.
- I worked as a Research at Statistics Canada for 4 months.
- I was part of the Modeling Division.
+My name is Mohammed.
+ I'm a third-year student in Physics-Mathematics.
+ For my first coop work term I was part of the Modeling Division at Statistics
+ Canada in Tunney's Pasture, Ottawa.
+ This report is a description of my time there, the environment I was a
+ part of, and the projects I was involved in.
+ 
+\end_layout
+
+\begin_layout Standard
+The Modeling Division is responsible for creating mathematical and computer
+ simulation models of Canadian citizens.
+ We use real statistical data collected by StatCan to make these models
+ representative of real society.
+ I worked on a model called LifePaths, which is categorized as a 
+\emph on
+microsimulation
+\emph default
+ model.
+ LifePaths is a computer program that simulates many aspects of society,
+ including education, fertility, mortality, wages, taxes and many more.
+ When you start LifePaths, you specify the size of the population you want
+ to simulate, and you have the option of changing some parameters, for example,
+ life expectancy.
+ When you start the simulation, LifePaths creates a virtual Canadian and
+ starts simulating this virtual Canadian's life, including basic details
+ like gender and province of residence, and more complicated details like
+ whether or not this person finished highschool, how many children they
+ have, and so on.
+ LifePaths simulates this person's entire life and when that virtual Canadian
+ dies, it simulates the next Canadian's life, until it reaches the population
+ you chose at the beginning.
+ These virtual Canadian's are statistically similar to real Canadians.
+ When LifePaths decides, for example, what program of study a person enters,
+ it knows what the statistical distribution of programs of study of real
+ Canadians are, and draws from this distribution.
+ Though none of the simulated Canadians in LifePaths exist in reality, the
+ entire population of virtual Canadians are statistically very similar to
+ the actual population.
+ When the LifePaths model finishes simulating a population, it surveys the
+ virtual population and outputs tables specified by a researcher.
+ These tables can be compared with real data, and in this way we can validate
+ whether the virtual population matches the real population.
+ 
+\end_layout
+
+\begin_layout Standard
+Why would you want to be able to create a virtual population that somehow
+ matches the real population? Having a virtual population lets you make
+ a change and observe the impact on the population, without harming anyone
+ or wasting lots of money.
+ LifePaths is programmed with a set of 
+\emph on
+parameters.
+
+\emph default
+ These parameters form a 
+\emph on
+scenario
+\emph default
+.
+ The parameters encompass a multitude of things, like migration rates into
+ and out of the country, average wages for different jobs, fertility rates,
+ probabilities of becoming disabled, the percentage of taxes one owes, and
+ so on.
+ By changing these parameters we can create new scenarios, run the simulation,
+ and observe the impact on the population.
+ How would populations distributions change if the migration rate were to
+ increase by so-and-so amount? Who would benefit the most if we cut taxes?
+ LifePaths is a tool that lets you pose these questions and attempt to answer
+ them with statistical arguments.
+\end_layout
+
+\begin_layout Standard
+I was located on the 24th floor of the 26-story R.H.
+ Coats building at Tunney's Pasture.
+ The Modeling Division I was a part of is made up of about ten people, and
+ included PhD's, researchers, and another coop student (also from uOttawa).
+ We each had our own cubicle with high walls and a work computer.
+ None of the regular work computers are connected to the internet --occasionally
+ we had access to confidential data and having these computers connected
+ to the internet is considered a security risk.
+ Each floor has a set of shared computers (one or two at each corner of
+ the floor) that are connected to the internet and can be used for browsing.
 \end_layout
 
 \end_body
