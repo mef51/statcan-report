@@ -2,7 +2,7 @@
 \lyxformat 413
 \begin_document
 \begin_header
-\textclass book
+\textclass report
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -37,7 +37,7 @@
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
-\suppress_date false
+\suppress_date true
 \use_refstyle 1
 \index Index
 \shortcut idx
@@ -50,8 +50,8 @@
 \headheight 0cm
 \headsep 0cm
 \footskip 0cm
-\secnumdepth 3
-\tocdepth 3
+\secnumdepth 2
+\tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
 \quotes_language english
@@ -165,6 +165,59 @@ I was located on the 24th floor of the 26-story R.H.
  to the internet is considered a security risk.
  Each floor has a set of shared computers (one or two at each corner of
  the floor) that are connected to the internet and can be used for browsing.
+\end_layout
+
+\begin_layout Standard
+The LifePaths model was programmed in a language called Modgen.
+ Modgen was developped a few years ago by Statistics Canada and is used
+ (as the name suggests) to generate socio-economic models.
+ Modgen is a language that compiles to the more standard C++ programming
+ language, used worldwide in all sorts of software.
+ The benefit of Modgen is that it is simpler to write than C++.
+ Modgen introduces many constructs and general ideas that are useful in
+ creating simulation models that C++ doesn't have, making it easier for
+ modelers and statisticians to focus solely on their model, rather than
+ the underlying technical details.
+ Since Modgen code compiles into C++, we can retain the performance and
+ speed that C++ offers.
+ This is important as large simulations can take a very long time.
+\end_layout
+
+\begin_layout Standard
+During my work term, the team was hired by Health Canada for a project with
+ LifePaths.
+ Health Canada wanted to understand the costs of paying for different types
+ of homecare for seniors, in the future.
+ LifePaths can simulate people's lives in the future based on population
+ projections and so create a projection of what the costs would be.
+ Health Canada also asked the Modeling Division to investigate different
+ scenarios: what would it be like if the government paid for 100% of the
+ costs? What would it be like if the government paid for 80% of the costs
+ and seniors the rest? LifePaths also allowed us to investigate how many
+ people would even be able to pay for their care if they were required to.
+ 
+\end_layout
+
+\begin_layout Standard
+The Health Canada project involved programming new modules into the simulation
+ to simulate the different types of homecare a person could receive, and
+ assigning homecare to people with a set probability.
+ To get these probabilities (so that they reflected reality) we analysed
+ the data in the National Population Health Survey (NPHS), which asks respondent
+s, amongst other things, if they received homecare and what kind of homecare
+ they received.
+\end_layout
+
+\begin_layout Standard
+While most of the team was kept busy with the Health Canada project, there
+ was also a project to renew and create a new release version of LifePaths.
+ LifePaths was in a state where there were hundreds of tables that few understoo
+d, modules that were never used, and multiple different versions as people
+ added their own features and then never merged them all together again.
+\end_layout
+
+\begin_layout Subsection*
+Tasks Completed
 \end_layout
 
 \end_body
