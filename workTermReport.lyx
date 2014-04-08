@@ -100,8 +100,9 @@ The Modeling Division is responsible for creating mathematical and computer
 microsimulation
 \emph default
  model.
- LifePaths is a computer program that simulates many aspects of society,
- including education, fertility, mortality, wages, taxes and many more.
+ LifePaths is a computer program that aims to simulate many aspects of Canadian
+ society, including education, fertility, mortality, wages, taxes and many
+ more.
  When you start LifePaths, you specify the size of the population you want
  to simulate, and you have the option of changing some parameters, for example,
  life expectancy.
@@ -214,10 +215,140 @@ While most of the team was kept busy with the Health Canada project, there
  LifePaths was in a state where there were hundreds of tables that few understoo
 d, modules that were never used, and multiple different versions as people
  added their own features and then never merged them all together again.
+ I was given the task of merging the different versions together and to
+ create a clean, releasable version of LifePaths.
+ This clean version of LifePaths would also serve as a starting point for
+ future LifePaths projects.
 \end_layout
 
 \begin_layout Subsection*
 Tasks Completed
+\end_layout
+
+\begin_layout Standard
+While I was at StatCan I worked on the following things:
+\end_layout
+
+\begin_layout Itemize
+Created a prototype version of the HomeCare simulation module.
+\end_layout
+
+\begin_layout Itemize
+Introduced and used source control software to carry out the merge and track
+ changes.
+ This let me build a history of changes made that served as documentation.
+\end_layout
+
+\begin_layout Itemize
+Presented about the source control software I used (called 'git') to the
+ team.
+ I explained a bit about how it worked, how to use it, and how I was using
+ it for LifePaths.
+\end_layout
+
+\begin_layout Itemize
+Validated that my merged version of LifePaths still behaved as expected
+ by comparing it's output with previous versions of LifePaths and with real
+ statistical data.
+ This involved a suite of graphs that plotted various statistics.
+ These statistics included population by province, unemployment rate since
+ 1971, earnings by province, births by year, and many more.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Microsimulation and LifePaths
+\end_layout
+
+\begin_layout Standard
+LifePaths is referred to as a 
+\emph on
+microsimulation
+\emph default
+ model.
+ The 
+\emph on
+micro
+\emph default
+ in 
+\emph on
+microsimulation
+\emph default
+ refers to the fact that the simulation models the behaviour of single individua
+ls, as opposed to modelling aggregate (or macro) statistics.
+ For example, one can collect data on a population's size every year, and
+ then construct a model (or function) that fits the data.
+ This function however does not give you any information about the individual
+ units of the population, for example the birth and death year of each person
+ in the population.
+ In this example the macro data is the size of the population and the micro
+ data is the birth and death year of each person.
+ Microsimulation (LifePaths specifically) tries to recreate the macrodata
+ (population size) by simulating the microdata (birth and death years) of
+ individuals.
+ When a simulation is complete LifePaths aggregates the data (in effect
+ conducting a survey) of the simulated individuals and outputs statistics
+ that can be compared with real statistics.
+ 
+\end_layout
+
+\begin_layout Standard
+A consequence of microsimulation is that it is possible to examine in details
+ the lives of each simulated individual.
+ Included with Modgen is a tool called the BioBrowser.
+ BioBrowser graphically displays how a person's traits change in time.
+ For example, we can use BioBrowser to see a person's disability state (no
+ disability, light disability, severe disability) throughout their life.
+ This lets us verify that the lives of the people we're simulating make
+ sense in reality.
+ 
+\end_layout
+
+\begin_layout Standard
+Microsimulation is a relatively new field.
+ It was first proposed by an Englishman named Guy Orcutt in 1957 in a paper
+ titled 
+\begin_inset Quotes eld
+\end_inset
+
+A new type of socio-economic system
+\begin_inset Quotes erd
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Orcutt G (1957) 'A new type of socio-economic system', 
+\emph on
+Review of Economics and Statistics, 
+\emph default
+39(2), 116-132.
+\end_layout
+
+\end_inset
+
+ Over time more and more statistical agencies have started their own microsimula
+tion models to address a whole host of issues.
+ Other than LifePaths, Statistics Canada has microsimulation models for
+ the tax and transfers system, health care analysis, and population projections.
+\end_layout
+
+\begin_layout Subsection*
+The Modgen Programming Language
+\end_layout
+
+\begin_layout Standard
+The LifePaths model is written in the Modgen language.
+ Modgen allows you to use language constructs that are tailored for writing
+ socio-economic models.
+ It also abstracts away some lower-level details of how the simulation runs
+ and creates an executable file with it's own visual interface for running
+ the simulation model.
+ This allows statisticians to develop the model without the need of a programmer
+ and lets the developer focus on the model itself.
+ 
 \end_layout
 
 \end_body
