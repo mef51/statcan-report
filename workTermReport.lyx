@@ -11,7 +11,7 @@
 \fontencoding global
 \font_roman palatino
 \font_sans default
-\font_typewriter default
+\font_typewriter courier
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
@@ -221,7 +221,7 @@ d, modules that were never used, and multiple different versions as people
  future LifePaths projects.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 Tasks Completed
 \end_layout
 
@@ -347,8 +347,547 @@ The LifePaths model is written in the Modgen language.
  and creates an executable file with it's own visual interface for running
  the simulation model.
  This allows statisticians to develop the model without the need of a programmer
- and lets the developer focus on the model itself.
+ and lets the developer focus more on the details of the model and less
+ on the implementation of an interface.
+ In short, Modgen is a language for specifying 
+\emph on
+actors
+\emph default
+ and simulating their lives by specifying the 
+\emph on
+events 
+\emph default
+that can happen to them.
+ In LifePaths, the actor is a Person and the events are life events.
+ Persons can get married, suffer an accident, go to university, have children,
+ and so on.
+\end_layout
+
+\begin_layout Subsubsection*
+Actors
+\end_layout
+
+\begin_layout Standard
+Let's say we were working on a Modgen microsimulation model and wanted to
+ create a Person actor.
+ We want to simulate the number of children this person has throughout their
+ life.
+ We can declare the actor in a file for Modgen like this:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\begin_inset listings
+lstparams "basicstyle={\normalsize\ttfamily},extendedchars=true,language={C++},numbers=left,numberstyle={\footnotesize},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+\paragraph_spacing single
+\noindent
+
+actor Person {
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing single
+\noindent
+
+	int numOfChildren = {0};
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing single
+\noindent
+
+};
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Modgen automatically tracks each actor's age (
+\begin_inset listings
+lstparams "basicstyle={\ttfamily},language={C++}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+int age
+\end_layout
+
+\end_inset
+
+) and the current 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily},language={C++}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+year
+\end_layout
+
+\end_inset
+
+ of the simulation.
+ The variables 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+numOfChildren
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+age
+\end_layout
+
+\end_inset
+
+, and 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+year
+\end_layout
+
+\end_inset
+
+ are called actor 
+\emph on
+states.
  
+\emph default
+We'll use the variable 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+numOfChildren
+\end_layout
+
+\end_inset
+
+ to track the number of children each simulated Person has.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Events
+\end_layout
+
+\begin_layout Standard
+What we need now is a way for a Person 
+\begin_inset Quotes eld
+\end_inset
+
+to have a child
+\begin_inset Quotes erd
+\end_inset
+
+, and then to increase the 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+numOfChildren
+\end_layout
+
+\end_inset
+
+ variable when that happens.
+ Modgen provides an 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+event
+\end_layout
+
+\end_inset
+
+ construct where we can define what the event of 
+\begin_inset Quotes eld
+\end_inset
+
+having a child
+\begin_inset Quotes erd
+\end_inset
+
+ means.
+ Modgen events require two functions.
+ The first function is called the time function.
+ The time function determines 
+\emph on
+when
+\emph default
+ the event happens.
+ The second function is the event function and it gets run when the event
+ happens.
+\end_layout
+
+\begin_layout Standard
+Time in LifePaths (and most Modgen simulations) is considered continuous.
+ This is possible because instead of using a clock that ticks regularly
+ to schedule events, very precise 
+\emph on
+waiting times 
+\emph default
+for events are generated and the simulation jumps to the event that has
+ the smallest waiting time.
+ Thus, the time function of an event must generate a waiting time for the
+ event.
+ These time functions can depend on all the other states of the Person.
+ For example, if we have a 
+\begin_inset Quotes eld
+\end_inset
+
+death
+\begin_inset Quotes erd
+\end_inset
+
+ event, and your age is young, we might calculate a very large waiting time,
+ as younger people are less likely to die.
+ If your age is very old, we would calculate a much shorter waiting time.
+ This means that every time the age changes, we want to recalculate the
+ waiting time of the event, to capture this new information.
+\end_layout
+
+\begin_layout Standard
+The general flow of the simulation of an actor goes like this: 
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+Call all the time functions of all the events.
+ This gives you a list of waiting times.
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+Call the event function for the event with the smallest waiting time.
+ This is the event that happens 
+\begin_inset Quotes eld
+\end_inset
+
+next
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+Recalculate all the waiting times of all the events.
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+Repeat.
+\end_layout
+
+\begin_layout Standard
+This loop repeats until one of the events ends the simulation for the actor
+ (like a death event).
+ Modgen takes care of all the details of the loop and all the researcher
+ has to do is define what the event functions are.
+ If a researcher wants some kind of timekeeping to, for example, know what
+ month an event happens, then the researcher creates a 
+\begin_inset Quotes eld
+\end_inset
+
+month
+\begin_inset Quotes erd
+\end_inset
+
+ event, whose waiting time time is always 1/12 of a year.
+ The year state is updated automatically by Modgen.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+To create a 
+\begin_inset Quotes eld
+\end_inset
+
+have a child
+\begin_inset Quotes erd
+\end_inset
+
+ event, you declare the event in the actor block of your file:
+\begin_inset listings
+lstparams "basicstyle={\normalsize\ttfamily},extendedchars=true,language={C++},numbers=left,numberstyle={\footnotesize},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+\paragraph_spacing single
+\noindent
+
+actor Person {
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing single
+\noindent
+
+	int numOfChildren = {0};
+\end_layout
+
+\begin_layout Plain Layout
+
+	event timeChildEvent, ChildEvent;
+\end_layout
+
+\begin_layout Plain Layout
+\paragraph_spacing single
+\noindent
+
+};
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this case, the time function is
+ 
+\lang english
+
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+timeChildEvent
+\end_layout
+
+\end_inset
+
+ and the event function is 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+ChildEvent
+\end_layout
+
+\end_inset
+
+.
+ The time function will come up with a waiting time based on the likelihood
+ of having a child and the event function will simply increment 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+numOfChildren
+\end_layout
+
+\end_inset
+
+ by one every time the Person has a child.
+ 
+\end_layout
+
+\begin_layout Standard
+As an example, let's construct an oversimplified probability model for the
+ likelihood of having a child based on age.
+ Let's say a person has zero chance of having a child at their age if their
+ age is under 16, a 60% chance if they are between 16 and 30, a 40% chance
+ if they are between 30 and 60, and no chance after that.
+ If we had a function 
+\begin_inset Formula $P(x)$
+\end_inset
+
+ that represented the 
+\emph on
+probability of having a child during age 
+\begin_inset Formula $x$
+\end_inset
+
+ 
+\emph default
+with 
+\begin_inset Formula $x$
+\end_inset
+
+ as an 
+\emph on
+integer, 
+\emph default
+this could be written as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(x)=\begin{cases}
+0 & x\leq16\\
+\frac{0.6}{30-16} & 16<x\leq30\\
+\frac{0.4}{60-30} & 30<x\leq60\\
+0 & otherwise
+\end{cases}=\begin{cases}
+0 & x\leq16\\
+\frac{0.6}{14} & 16<x\leq30\\
+\frac{0.4}{30} & 30<x\leq60\\
+0 & otherwise
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We divide by the width of the age interval so that 
+\begin_inset Formula $P(x)$
+\end_inset
+
+ is normalized.
+ We would implement this model in Modgen with this function:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\begin_inset listings
+lstparams "basicstyle={\normalsize\ttfamily},extendedchars=true,language={C++},numbers=left,numberstyle={\footnotesize},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+\paragraph_spacing single
+\noindent
+
+TIME Person::timeChildEvent()
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	TIME waitingTime; //declare variable
+\end_layout
+
+\begin_layout Plain Layout
+
+	if(age <= 16){
+\end_layout
+
+\begin_layout Plain Layout
+
+		waitingTime = TIME_INFINITE;
+\end_layout
+
+\begin_layout Plain Layout
+
+	} else if(16 < age && age <= 30) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		if(RandUniform() < 0.6/(30-16)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+			waitingTime = 0; //0 means this is the next event
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+	} else if(30 < age && age <= 60) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		if(RandUniform() < 0.4/(60-30)){
+\end_layout
+
+\begin_layout Plain Layout
+
+			waitingTime = 0; //0 means this is the next event
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+	} else {
+\end_layout
+
+\begin_layout Plain Layout
+
+		waitingTime = TIME_INFINITE;
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
