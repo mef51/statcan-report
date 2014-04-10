@@ -50,8 +50,8 @@
 \headheight 0cm
 \headsep 0cm
 \footskip 0cm
-\secnumdepth 2
-\tocdepth 2
+\secnumdepth -1
+\tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
 \quotes_language english
@@ -76,7 +76,23 @@ Mohammed A.
  Chamma
 \end_layout
 
-\begin_layout Section*
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Introduction
 \end_layout
 
@@ -113,14 +129,14 @@ microsimulation
  have, and so on.
  LifePaths simulates this person's entire life and when that virtual Canadian
  dies, it simulates the next Canadian's life, until it reaches the population
- you chose at the beginning.
+ size you chose at the beginning.
  These virtual Canadian's are statistically similar to real Canadians.
  When LifePaths decides, for example, what program of study a person enters,
  it knows what the statistical distribution of programs of study of real
  Canadians are, and draws from this distribution.
  Though none of the simulated Canadians in LifePaths exist in reality, the
- entire population of virtual Canadians are statistically very similar to
- the actual population.
+ entire population of virtual Canadians are statistically similar to the
+ actual population.
  When the LifePaths model finishes simulating a population, it surveys the
  virtual population and outputs tables specified by a researcher.
  These tables can be compared with real data, and in this way we can validate
@@ -159,7 +175,7 @@ scenario
 I was located on the 24th floor of the 26-story R.H.
  Coats building at Tunney's Pasture.
  The Modeling Division I was a part of is made up of about ten people, and
- included PhD's, researchers, and another coop student (also from uOttawa).
+ included PhDs, researchers, and another coop student (also from uOttawa).
  We each had our own cubicle with high walls and a work computer.
  None of the regular work computers are connected to the internet --occasionally
  we had access to confidential data and having these computers connected
@@ -169,7 +185,11 @@ I was located on the 24th floor of the 26-story R.H.
 \end_layout
 
 \begin_layout Standard
-The LifePaths model was programmed in a language called Modgen.
+The LifePaths model was programmed in a language called 
+\emph on
+Modgen
+\emph default
+.
  Modgen was developped a few years ago by Statistics Canada and is used
  (as the name suggests) to generate socio-economic models.
  Modgen is a language that compiles to the more standard C++ programming
@@ -187,8 +207,8 @@ The LifePaths model was programmed in a language called Modgen.
 \begin_layout Standard
 During my work term, the team was hired by Health Canada for a project with
  LifePaths.
- Health Canada wanted to understand the costs of paying for different types
- of homecare for seniors, in the future.
+ Health Canada wanted to understand the future costs of paying for different
+ types of homecare for seniors.
  LifePaths can simulate people's lives in the future based on population
  projections and so create a projection of what the costs would be.
  Health Canada also asked the Modeling Division to investigate different
@@ -204,8 +224,8 @@ The Health Canada project involved programming new modules into the simulation
  to simulate the different types of homecare a person could receive, and
  assigning homecare to people with a set probability.
  To get these probabilities (so that they reflected reality) we analysed
- the data in the National Population Health Survey (NPHS), which asks respondent
-s, amongst other things, if they received homecare and what kind of homecare
+ data in the National Population Health Survey (NPHS), which asks respondents,
+ amongst other things, if they received homecare and what kind of homecare
  they received.
 \end_layout
 
@@ -213,15 +233,15 @@ s, amongst other things, if they received homecare and what kind of homecare
 While most of the team was kept busy with the Health Canada project, there
  was also a project to renew and create a new release version of LifePaths.
  LifePaths was in a state where there were hundreds of tables that few understoo
-d, modules that were never used, and multiple different versions as people
- added their own features and then never merged them all together again.
+d, modules that were never used, and multiple different versions from people
+ adding their own features and then never merging them all together again.
  I was given the task of merging the different versions together and to
  create a clean, releasable version of LifePaths.
  This clean version of LifePaths would also serve as a starting point for
  future LifePaths projects.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Tasks Completed
 \end_layout
 
@@ -256,7 +276,7 @@ Validated that my merged version of LifePaths still behaved as expected
  
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 Microsimulation and LifePaths
 \end_layout
 
@@ -335,7 +355,7 @@ tion models to address a whole host of issues.
  the tax and transfers system, health care analysis, and population projections.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
 The Modgen Programming Language
 \end_layout
 
@@ -363,7 +383,7 @@ that can happen to them.
  and so on.
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Actors
 \end_layout
 
@@ -497,7 +517,7 @@ numOfChildren
  
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsubsection
 Events
 \end_layout
 
@@ -684,10 +704,7 @@ actor Person {
 \end_layout
 
 \begin_layout Standard
-In this case, the time function is
- 
-\lang english
-
+In this case, the time function is 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -733,7 +750,7 @@ numOfChildren
 \end_layout
 
 \begin_layout Standard
-As an example, let's construct an oversimplified probability model for the
+As an example, let's construct an oversimplified probability model of the
  likelihood of having a child based on age.
  Let's say a person has zero chance of having a child at their age if their
  age is under 16, a 60% chance if they are between 16 and 30, a 40% chance
@@ -878,6 +895,353 @@ TIME Person::timeChildEvent()
 \begin_layout Plain Layout
 
 	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The function 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+RandUniform()
+\end_layout
+
+\end_inset
+
+ returns a 
+\emph on
+uniformly 
+\emph default
+distributed random number between 0 and 1.
+ This means that boolean expressions in the form 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+RandUniform() < p
+\end_layout
+
+\end_inset
+
+ have a probability 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+p
+\end_layout
+
+\end_inset
+
+ of being true.
+ Now all that's left is to implement the event function.
+ The event function simply increments the state of 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+numOfChildren
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\begin_inset listings
+lstparams "basicstyle={\normalsize\ttfamily},extendedchars=true,language={C++},numbers=left,numberstyle={\footnotesize},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+\paragraph_spacing single
+\noindent
+
+void Person::ChildEvent()
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	numOfChildren = numOfChildren + 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The two event functions are all that's needed to implement this simple model.
+ Modgen takes care of the details including scheduling the event and keeping
+ track of the age and time of each actor.
+ From here you compile the model and Modgen creates an executable file that
+ has a visual interface to the model.
+ In the interface the user can specify the size of the population to simulate.
+ To create some useful output, you can create tables with Modgen's tabling
+ language using the variable 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+numOfChildren
+\end_layout
+
+\end_inset
+
+.
+ These tables act as surveys and Modgen fills in the table as it simulates
+ the actors.
+ At the end, a spreadsheet table is displayed with output that can be copied
+ to other tools like Microsoft Excel or Stata so that graphs can be made.
+ In this way we can validate that the simulation is giving output that agrees
+ with the model we implemented, or that the simulated data matches with
+ some real data.
+\end_layout
+
+\begin_layout Subsubsection
+Parameters
+\end_layout
+
+\begin_layout Standard
+Another feature of Modgen is the ability to specify 
+\emph on
+parameters
+\emph default
+ that can be changed from scenario to scenario by a user through the visual
+ interface.
+ Let's say we wanted to investigate a scenario in the above example where
+ 16 year olds had a very high chance of having a child.
+ One way to do this would be to simply change the code of the model.
+ Changing the code however isn't very flexible when a researcher wants to
+ investigate a wide variety of scenarios.
+ What could be done instead is to specify a parameter in the code that represent
+s the probability of having a child during age 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ The time function would access this parameter when calculating waiting
+ times, and the parameter can be changed through the visual interface by
+ the researcher.
+ The visual interface displays a spreadsheet like table (in this case it
+ would be a table of probabilities by age) and values can be entered or
+ pasted in from some external program.
+ These modifications to the parameter don't require you to recompile the
+ code, or even to have access to the code, and can be saved as a seperate
+ scenario file with it's own output.
+ In this way a researcher can create a set of 
+\begin_inset Quotes eld
+\end_inset
+
+what-if
+\begin_inset Quotes erd
+\end_inset
+
+ scenarios when investigating an issue.
+ 
+\end_layout
+
+\begin_layout Standard
+To declare a parameter in Modgen, you specify the type of the parameter
+ (a real number), it's name, and it's dimensions (in this case, age).
+ Since we're using age and age is treated as a continuous variable, we also
+ create a 
+\emph on
+partition
+\emph default
+ to divide up a person's age into discrete groups of our choosing:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\begin_inset listings
+lstparams "basicstyle={\normalsize\ttfamily},extendedchars=true,language={C++},numbers=left,numberstyle={\footnotesize},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+partition AGE_GROUPS {
+\end_layout
+
+\begin_layout Plain Layout
+
+	5 , 10, 15, 20, 25, 30, 35, 40, 45, 50, 
+\end_layout
+
+\begin_layout Plain Layout
+
+	55, 60, 65, 70, 75, 80, 85, 90, 95 
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+
+parameters {
+\end_layout
+
+\begin_layout Plain Layout
+
+	double ChildBirthProbability[AGE_GROUPS];
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This tells Modgen to create a parameter table in the visual interface for
+ the parameter 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+ChildBirthProbability
+\end_layout
+
+\end_inset
+
+ and the number of entries to have based on the number of divisions in the
+ 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+AGE_GROUPS
+\end_layout
+
+\end_inset
+
+ partition.
+ Default values for the parameter are specified by another file that Modgen
+ makes a copy of whenever a new scenario is created.
+\end_layout
+
+\begin_layout Standard
+Having a parameter simplifies the implementation of our time function.
+ We can replace what we had before with the following function:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\begin_inset listings
+lstparams "basicstyle={\normalsize\ttfamily},extendedchars=true,language={C++},numbers=left,numberstyle={\footnotesize},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+\paragraph_spacing single
+\noindent
+
+TIME Person::timeChildEvent()
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	TIME waitingTime; //declare variable
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	//take the age and figure out which age group it falls into
+\end_layout
+
+\begin_layout Plain Layout
+
+	int ageGroup = SPLIT(age, AGE_GROUPS); 
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	if(RandUniform() < ChildBirthProbability[ageGroup])
+\end_layout
+
+\begin_layout Plain Layout
+
+		waitingTime = 0; // make this the next event
+\end_layout
+
+\begin_layout Plain Layout
+
+	else
+\end_layout
+
+\begin_layout Plain Layout
+
+		waitingTime = TIME_INFINITE;
 \end_layout
 
 \begin_layout Plain Layout
