@@ -1206,7 +1206,6 @@ TIME Person::timeChildEvent()
 
 \begin_layout Plain Layout
 
-	
 \end_layout
 
 \begin_layout Plain Layout
@@ -1221,7 +1220,6 @@ TIME Person::timeChildEvent()
 
 \begin_layout Plain Layout
 
-	
 \end_layout
 
 \begin_layout Plain Layout
@@ -1252,6 +1250,147 @@ TIME Person::timeChildEvent()
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+With that we've created a basic model that allows a researcher to enter
+ values for the 
+\begin_inset listings
+lstparams "basicstyle={\ttfamily}"
+inline true
+status open
+
+\begin_layout Plain Layout
+
+ChildBirthProbability
+\end_layout
+
+\end_inset
+
+ parameter, perhaps based on some real data or perhaps in investigating
+ a 
+\begin_inset Quotes eld
+\end_inset
+
+what-if
+\begin_inset Quotes erd
+\end_inset
+
+ scenario (eg.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+what if everyone over 30 stopped having children?
+\begin_inset Quotes erd
+\end_inset
+
+).
+ This model can be compiled and the executable can be distributed online
+ to anyone interested in these kinds of problems.
+\end_layout
+
+\begin_layout Subsubsection
+Visual Interface
+\end_layout
+
+\begin_layout Standard
+Modgen automatically creates an interface for running, modifying, and saving
+ simulations.
+ 
+\end_layout
+
+\begin_layout Standard
+The workflow for using a Modgen model is usually something like this: 
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+Specify/Modify the scenario's parameters.
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+Choose a population size.
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+Run the simulation (this generates an output database).
+\end_layout
+
+\begin_layout Enumerate
+\paragraph_spacing single
+View or Export the output tables.
+\end_layout
+
+\begin_layout Standard
+Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modgen's-Interface"
+
+\end_inset
+
+ shows an example of the interface that Modgen generates for any model:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename interface.jpg
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Modgen's-Interface"
+
+\end_inset
+
+Modgen's Interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Projects
+\end_layout
+
+\begin_layout Subsection
+Home Care Project
+\end_layout
+
+\begin_layout Subsection
+Merge Project
+\end_layout
+
+\begin_layout Section
+Conclusion
 \end_layout
 
 \end_body
