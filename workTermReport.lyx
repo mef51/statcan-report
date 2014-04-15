@@ -1381,6 +1381,20 @@ Modgen's Interface
 Projects
 \end_layout
 
+\begin_layout Standard
+Before starting on any projects, the beginning of the work term was spent
+ learning about Modgen and microsimulation and practicing with Modgen to
+ create some simple models.
+ I then used Modgen to participate in two projects.
+ The first project was a contract job that came from Health Canada to understand
+ costs of home care in the future.
+ This required adding a new module in LifePaths written in Modgen.
+ The second project was to merge the codebase of different versions of LifePaths
+ and to produce a 'clean' and releasable version of LifePaths.
+ The merge project involved reorganizing hundreds of lines of Modgen code.
+ 
+\end_layout
+
 \begin_layout Subsection
 Home Care Project
 \end_layout
