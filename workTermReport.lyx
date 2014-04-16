@@ -307,7 +307,7 @@ ls, as opposed to modelling aggregate (or macro) statistics.
  (population size) by simulating the microdata (birth and death years) of
  individuals.
  When a simulation is complete LifePaths aggregates the data (in effect
- conducting a survey) of the simulated individuals and outputs statistics
+ by conducting a survey) of the simulated individuals and outputs statistics
  that can be compared with real statistics.
  
 \end_layout
@@ -652,7 +652,7 @@ month
 \begin_inset Quotes erd
 \end_inset
 
- event, whose waiting time time is always 1/12 of a year.
+ event, whose waiting time is always 1/12 of a year.
  The year state is updated automatically by Modgen.
 \end_layout
 
@@ -899,6 +899,11 @@ TIME Person::timeChildEvent()
 
 \begin_layout Plain Layout
 
+	return waitingTime;
+\end_layout
+
+\begin_layout Plain Layout
+
 }
 \end_layout
 
@@ -1080,7 +1085,7 @@ what-if
 
 \begin_layout Standard
 To declare a parameter in Modgen, you specify the type of the parameter
- (a real number), it's name, and it's dimensions (in this case, age).
+ (a real number), its name, and its dimensions (in this case, age).
  Since we're using age and age is treated as a continuous variable, we also
  create a 
 \emph on
@@ -1244,6 +1249,11 @@ TIME Person::timeChildEvent()
 
 \begin_layout Plain Layout
 
+	return waitingTime;
+\end_layout
+
+\begin_layout Plain Layout
+
 }
 \end_layout
 
@@ -1396,7 +1406,63 @@ Before starting on any projects, the beginning of the work term was spent
 \end_layout
 
 \begin_layout Subsection
-Home Care Project
+Homecare Project
+\end_layout
+
+\begin_layout Standard
+Around the beginning of the work term, the Modelling division was approached
+ by Health Canada.
+ They wanted to use LifePaths to get an idea of what the costs of senior
+ care would be like in the future.
+ There was a few weeks of meetings as the project was fleshed out and around
+ February it became clear that at least one aspect of the project was to
+ add a module to LifePaths that simulated people receiving homecare.
+\end_layout
+
+\begin_layout Standard
+The first concern was how to define homecare, and where the data would come
+ from.
+ The plan involved multiple aspects.
+ First we had to find some real data on the receipt of homecare to understand
+ the amount of detail we could realistically simulate.
+ Is there data on different kinds of homecare? Could we find out what the
+ proportion of people receiving homecare was in different provinces? How
+ about the proportion by different ages? The next aspect of the project
+ was to take this data and construct a mathematical model.
+ With a model, we could write some Modgen code and create a module that
+ realistically simulated homecare.
+\end_layout
+
+\begin_layout Standard
+I participated in finding the data on homecare and in prototyping the early
+ stages of the homecare module.
+ Other members of the team created the mathematical model and implemented
+ it in Modgen.
+ 
+\end_layout
+
+\begin_layout Standard
+For our data source we used a survery conducted by StatCan called the National
+ Population Health Survey (NPHS).
+ This survey asks respondents a multitude of questions about their health
+ and lifestyle.
+ This included questions about health issues and the type of care received.
+ The National Population Health Survey started in 1994 and tries to survey
+ the same respondents every two years (this is called a longitudinal survey).
+ In addition to the longitudinal component, the NPHS has a large data file
+ of respondents who were only surveyed once (this is called a cross-sectional
+ survey).
+ The respondents of the NPHS were from all across Canada and The cross-sectional
+ component had a much larger sample size than the longitudinal component
+ so we used the cross-sectional data of 1996 and 1998 to get some information
+ about homecare.
+ 
+\end_layout
+
+\begin_layout Standard
+Of the tens of thousands of people surveyed there were only about 2500 who
+ had received some type of homecare.
+ The 
 \end_layout
 
 \begin_layout Subsection
