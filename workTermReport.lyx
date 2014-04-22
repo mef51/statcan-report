@@ -1425,10 +1425,14 @@ The first concern was how to define homecare, and where the data would come
  The plan involved multiple aspects.
  First we had to find some real data on the receipt of homecare to understand
  the amount of detail we could realistically simulate.
- Is there data on different kinds of homecare? Could we find out what the
- proportion of people receiving homecare was in different provinces? How
- about the proportion by different ages? The next aspect of the project
- was to take this data and construct a mathematical model.
+ Is there data on different 
+\emph on
+kinds
+\emph default
+ of homecare? Could we find out what the proportion of people receiving
+ homecare was in different provinces? How about the proportion by different
+ ages? The next aspect of the project was to take this data and construct
+ a mathematical model.
  With a model, we could write some Modgen code and create a module that
  realistically simulated homecare.
 \end_layout
@@ -1442,7 +1446,7 @@ I participated in finding the data on homecare and in prototyping the early
 \end_layout
 
 \begin_layout Standard
-For our data source we used a survery conducted by StatCan called the National
+For our data source we used a survey conducted by StatCan called the National
  Population Health Survey (NPHS).
  This survey asks respondents a multitude of questions about their health
  and lifestyle.
@@ -1452,7 +1456,7 @@ For our data source we used a survery conducted by StatCan called the National
  In addition to the longitudinal component, the NPHS has a large data file
  of respondents who were only surveyed once (this is called a cross-sectional
  survey).
- The respondents of the NPHS were from all across Canada and The cross-sectional
+ The respondents of the NPHS were from all across Canada and the cross-sectional
  component had a much larger sample size than the longitudinal component
  so we used the cross-sectional data of 1996 and 1998 to get some information
  about homecare.
@@ -1462,7 +1466,23 @@ For our data source we used a survery conducted by StatCan called the National
 \begin_layout Standard
 Of the tens of thousands of people surveyed there were only about 2500 who
  had received some type of homecare.
- The 
+ The concept of homecare in NPHS was broken into seven different categories,
+ which the team simplified to just three: Nursing homecare, personal homecare,
+ and just 
+\begin_inset Quotes eld
+\end_inset
+
+other
+\begin_inset Quotes erd
+\end_inset
+
+ homecare.
+ This simplification was made because of the very low numbers there were
+ for some of the categories.
+ Nursing homecare is when a nurse visits the home to provide some medical
+ care.
+ Personal homecare is care related to day-to-day tasks (meal preparation,
+ hygiene)
 \end_layout
 
 \begin_layout Subsection
