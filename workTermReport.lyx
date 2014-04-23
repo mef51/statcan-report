@@ -1397,7 +1397,7 @@ Before starting on any projects, the beginning of the work term was spent
  create some simple models.
  I then used Modgen to participate in two projects.
  The first project was a contract job that came from Health Canada to understand
- costs of home care in the future.
+ costs of homecare in the future.
  This required adding a new module in LifePaths written in Modgen.
  The second project was to merge the codebase of different versions of LifePaths
  and to produce a 'clean' and releasable version of LifePaths.
@@ -1466,9 +1466,9 @@ For our data source we used a survey conducted by StatCan called the National
 \begin_layout Standard
 Of the tens of thousands of people surveyed there were only about 2500 who
  had received some type of homecare.
- The concept of homecare in NPHS was broken into seven different categories,
+ The concept of homecare in the NPHS was broken into seven different categories,
  which the team simplified to just three: Nursing homecare, personal homecare,
- and just 
+ and 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1482,11 +1482,92 @@ other
  Nursing homecare is when a nurse visits the home to provide some medical
  care.
  Personal homecare is care related to day-to-day tasks (meal preparation,
- hygiene)
+ hygiene).
+ **LALA I SHOULD CONCLUDE THIS PROJECT SOMEHOW maybe go see that email from
+ jenn about the health canada presentation**
 \end_layout
 
 \begin_layout Subsection
 Merge Project
+\end_layout
+
+\begin_layout Standard
+Most of my time during the work-term was spent working on the merge project.
+ While I was doing this, I started investigating how the team's workflow
+ could be improved.
+ The goal of the merge project was to produce a 'clean' and publicly releasable
+ version of LifePaths that others could use or modify.
+ The other goal of the project was to have a version of LifePaths that would
+ serve as a good starting point for future projects.
+ Inefficiencies in the workflow and code organization motivated this project.
+\end_layout
+
+\begin_layout Subsubsection
+Team Workflow
+\end_layout
+
+\begin_layout Standard
+The team uses a shared folder to work on things together.
+ In the case of LifePaths, all the source code sat in a folder and if someone
+ wanted to work on it they would make a copy of the folder and rename it
+ (adding their initials or some other identifier).
+ The result of this was that the shared folder was filled with multiple
+ versions of LifePaths and no clear indication of what was different between
+ them (especially when people just added their initials to things).
+ Over time this led to a problem where no one really knew which version
+ of LifePaths should be used, and which versions had the desired features.
+ 
+\end_layout
+
+\begin_layout Standard
+It was also a problem when people wanted to collaborate together.
+ It was hard to coordinate who made what changes and when two sets of changes
+ from different people were put together, things often stopped working without
+ a clear idea of which change was responsible.
+ 
+\end_layout
+
+\begin_layout Standard
+To address some of these workflow problems I suggested using a tool that
+ enables source control.
+ Source control tracks history and changes made to a project, line-by-line.
+ It would enable the ability to easily see who made what changes, and when
+ they made them.
+ Source control also lets you manage different 
+\begin_inset Quotes eld
+\end_inset
+
+branches
+\begin_inset Quotes erd
+\end_inset
+
+ of code.
+ The copied folders with initials would be replaced with branches.
+ These branches can be compared with one another to explicitly see what
+ their differences are, and can be merged together using the source control
+ tool.
+\end_layout
+
+\begin_layout Standard
+While doing the merge I worked on convincing the team that source control
+ was a solution to a lot of the problems and I presented about two pieces
+ of software that do source control: the first was called Git and was an
+ open-source tool I was familiar with from before, and the other was called
+ Team Foundation, which is the standard at StatCan.
+ I presented to the team about the two tools and how they would be used
+ internally for LifePaths.
+ While I was told progress on these kinds of things (getting new software
+ and changing workflows) was slow at StatCan, I was allowed to install Git
+ on my machine and a few of my coworkers' machines so that we could use
+ it for our own work, and I ended up using Git to create the merged version
+ of LifePaths.
+ 
+\end_layout
+
+\begin_layout Standard
+My work-term ended before any decision was made on which source control
+ software to use and before I left I made a few guides on how to use Git
+ and how it could be used specifically for LifePaths.
 \end_layout
 
 \begin_layout Section
