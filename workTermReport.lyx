@@ -107,6 +107,8 @@ I describe my work term as a researcher in the Modeling Division at Statistics
  Most of the division's remaining time was focused on merging together different
  versions of LifePaths and preparing a clean and publicly releasable version
  of LifePaths that would serve as the basis of future work.
+ During the merge project, I worked on getting the team to use source control
+ software as a way of improving the team's workflow.
 \end_layout
 
 \begin_layout Standard
@@ -1527,7 +1529,7 @@ Most of my time during the work-term was spent working on the merge project.
 \end_layout
 
 \begin_layout Subsubsection
-Team Workflow
+Team Workflow and Source Control
 \end_layout
 
 \begin_layout Standard
@@ -1630,6 +1632,27 @@ The Git history of the merged version.
 My work-term ended before any decision was made on which source control
  software to use and before I left I made a few guides on how to use Git
  and how it could be used specifically for LifePaths.
+\end_layout
+
+\begin_layout Subsubsection
+The Merge
+\end_layout
+
+\begin_layout Standard
+There were two principal versions of LifePaths that needed to be merged.
+ The first was a few years old and added modules that simulated the payment
+ and transfer 
+\emph on
+provincial 
+\emph default
+taxes in Canada.
+ This capability, while conceivably useful, had just sat around in it's
+ own folder seperated from the rest of LifePaths for years, and was never
+ really used.
+ The other version was just a few months old and was considered to be the
+ most recent 'release' version.
+ It had up to date data on population projections and mortality, and had
+ a very large module written by one of the researchers in the divis
 \end_layout
 
 \begin_layout Section
