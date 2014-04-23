@@ -92,6 +92,30 @@ LatexCommand tableofcontents
 
 \end_layout
 
+\begin_layout Abstract
+I describe my work term as a researcher in the Modeling Division at Statistics
+ Canada from January to April of 2014.
+ Specifically I give an overview of the work environment at the government,
+ an introduction to the field of microsimulation, a description of a programming
+ language called Modgen used for creating models, and a report of the work
+ I took part in during my term.
+ The work revolved around a microsimulation model called LifePaths, which
+ simulates the lives of Canadian Citizens and allows researchers to explore
+ policy and social questions.
+ During my term the division was contracted by Health Canada to study the
+ costs of future senior care using LifePaths.
+ Most of the division's remaining time was focused on merging together different
+ versions of LifePaths and preparing a clean and publicly releasable version
+ of LifePaths that would serve as the basis of future work.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Introduction
 \end_layout
@@ -1562,6 +1586,44 @@ While doing the merge I worked on convincing the team that source control
  it for our own work, and I ended up using Git to create the merged version
  of LifePaths.
  
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename history.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The Git history of the merged version.
+ Each little bubble represents a set of changes.
+ The most recent change is at the top.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
