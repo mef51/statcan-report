@@ -1436,7 +1436,7 @@ Homecare Project
 \end_layout
 
 \begin_layout Standard
-Around the beginning of the work term, the Modelling division was approached
+Around the beginning of the work term, the Modeling Division was approached
  by Health Canada.
  They wanted to use LifePaths to get an idea of what the costs of senior
  care would be like in the future.
@@ -1456,7 +1456,7 @@ The first concern was how to define homecare, and where the data would come
 kinds
 \emph default
  of homecare? Could we find out what the proportion of people receiving
- homecare was in different provinces? How about the proportion by different
+ homecare was in the different provinces? How about the proportion by different
  ages? The next aspect of the project was to take this data and construct
  a mathematical model.
  With a model, we could write some Modgen code and create a module that
@@ -1476,16 +1476,16 @@ For our data source we used a survey conducted by StatCan called the National
  Population Health Survey (NPHS).
  This survey asks respondents a multitude of questions about their health
  and lifestyle.
- This included questions about health issues and the type of care received.
+ This included questions about health issues and the type of care they received.
  The National Population Health Survey started in 1994 and tries to survey
  the same respondents every two years (this is called a longitudinal survey).
- In addition to the longitudinal component, the NPHS has a large data file
+ In addition to the longitudinal component, the NPHS has large data files
  of respondents who were only surveyed once (this is called a cross-sectional
  survey).
  The respondents of the NPHS were from all across Canada and the cross-sectional
  component had a much larger sample size than the longitudinal component
- so we used the cross-sectional data of 1996 and 1998 to get some information
- about homecare.
+ so we used the cross-sectional data of 1996 and 1998 to get the information
+ we needed about homecare.
  
 \end_layout
 
@@ -1504,13 +1504,40 @@ other
 
  homecare.
  This simplification was made because of the very low numbers there were
- for some of the categories.
+ for some of the seven categories.
  Nursing homecare is when a nurse visits the home to provide some medical
  care.
  Personal homecare is care related to day-to-day tasks (meal preparation,
  hygiene).
- **LALA I SHOULD CONCLUDE THIS PROJECT SOMEHOW maybe go see that email from
- jenn about the health canada presentation**
+\end_layout
+
+\begin_layout Standard
+From this data the simplest model that we could create was one that assigned
+ a probability based on your province of residence, your age, your gender,
+ and, since LifePaths already modeled disability for people, your disability
+ level.
+ To make this model you just count the number of people receiving each type
+ of homecare grouping them by age, gender, province, and disability level
+ and then divide by the total number of people receiving homecare.
+ To know if a person receives homecare in the first place you calculate
+ the proportion of people who receive homecare out of the entire population
+ (or sample).
+\end_layout
+
+\begin_layout Standard
+To prototype the simulation module, I and another coop student implemented
+ the above model and created some output tables to show how it worked.
+ We presented the prototype and this got the rest of the team discussing
+ various aspects of the problem, and they worked on creating and implementing
+ a more complete model.
+ 
+\end_layout
+
+\begin_layout Standard
+After that point I spent most of my time on the merge project.
+ The division presented to Health Canada their analysis of different scenarios
+ around the end of April.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -1641,9 +1668,9 @@ The Merge
 \begin_layout Standard
 There were two principal versions of LifePaths that needed to be merged.
  The first was a few years old and added modules that simulated the payment
- and transfer 
+ and transfer of
 \emph on
-provincial 
+ provincial 
 \emph default
 taxes in Canada.
  This capability, while conceivably useful, had just sat around in it's
@@ -1652,11 +1679,82 @@ taxes in Canada.
  The other version was just a few months old and was considered to be the
  most recent 'release' version.
  It had up to date data on population projections and mortality, and had
- a very large module written by one of the researchers in the divis
+ a very large module written by one of the researchers in the division for
+ a conference paper on earnings.
+ 
+\end_layout
+
+\begin_layout Standard
+Aside from there being two versions to merge, the previous release version
+ was filled with code for hundreds and hundreds of output tables that few
+ really understood.
+ One of our goals was to pick just a few tables that would serve as example
+ of the capability of the Modgen tabling language and remove the rest, releasing
+ only these hand-picked tables.
+ This ended up reducing our codebase by thousands of lines.
+\end_layout
+
+\begin_layout Standard
+At first it seemed like one of the biggest challenges of merging the two
+ versions of LifePaths --both with thousands of lines of code-- was how
+ to find what the differences were between the two.
+ Part of the Git source control tool was that it can help you merge two
+ 
+\begin_inset Quotes eld
+\end_inset
+
+branches
+\begin_inset Quotes erd
+\end_inset
+
+ of code together by automatically merging the parts of a file that are
+ the same in both versions and telling you explicitly where both versions
+ of a file differ.
+ This lets you open the file where the 'conflict' was found, see both versions
+ of the different lines of code, and pick the version you want to keep.
+ Sometimes you have to rewrite that section of the file to have both versions
+ and have it still compile.
+\end_layout
+
+\begin_layout Standard
+Since the two versions of LifePaths dealt with different concepts (one with
+ taxes and the other with earnings) most of the differences were easily
+ resolvable and it was just a matter of picking the right version to keep.
+ Since the taxes version was a lot older than the earnings version, there
+ were also a lot of conflicts arising from things that were out of date
+ in the taxes version.
+ These are simply resolved by picking the version that was newer.
+\end_layout
+
+\begin_layout Standard
+There were lots of little differences everywhere and most of the task was
+ manual labor.
+ For fun, I used Git to ouput a file with a list of all the changes (line-by-lin
+e) made to merge the two together.
+ This file ended up being 600 pages long and made it seem like I did a lot
+ more work than I did!
+\end_layout
+
+\begin_layout Standard
+I also ended up merging the simulation modules created for the homecare
+ project into this 'clean' version.
+ 
+\end_layout
+
+\begin_layout Standard
+By the end of the work term I had produced a version of LifePaths that was
+ a lot slimmer with a lot of unneeded things removed.
+ It also had all the major work of past years combined into a single model,
+ and will hopefully be a good starting point for future work.
+ Perhaps it will one day be released for public use as well.
 \end_layout
 
 \begin_layout Section
 Conclusion
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body
