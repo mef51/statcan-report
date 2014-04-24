@@ -68,7 +68,11 @@
 \begin_body
 
 \begin_layout Title
-Work Term Report
+Work-Term Report 
+\begin_inset Newline newline
+\end_inset
+
+Microsimulation, LifePaths, and Source Control at Statistics Canada
 \end_layout
 
 \begin_layout Author
@@ -1754,7 +1758,34 @@ Conclusion
 \end_layout
 
 \begin_layout Standard
+Overall my work term at StatCan was educational.
+ I learned about the rules surrounding the government workplace and about
+ how StatCan is structured.
+ I enjoyed working with my coworkers and I felt like my contribution to
+ their work was useful to them.
+ I learned about the field of microsimulation and about how the LifePaths
+ microsimulation model works.
+ I also learned about the Modgen programming language and used it a lot
+ in my work while at StatCan.
+ I participated in the division's work with Health Canada and helped renew
+ LifePaths by created a new, clean version of it.
+ 
+\end_layout
 
+\begin_layout Standard
+I learned about workflows and how they can be improved with the right tools.
+ I also learned about how much resistance and lethargy there can be to implement
+ing new things (like git) in large organizations.
+ 
+\end_layout
+
+\begin_layout Standard
+The work I participated in at StatCan taught me about simulation in general,
+ which is used for many applications in Physics.
+ I also got to practice programming, and debugging when things didn't work.
+ My experiences at StatCan are experiences that I can draw on when working
+ on more physics-related programming tasks.
+ 
 \end_layout
 
 \end_body
