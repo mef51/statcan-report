@@ -129,11 +129,30 @@ Introduction
 \begin_layout Standard
 My name is Mohammed.
  I'm a third-year student in Physics-Mathematics.
- For my first coop work term I was part of the Modeling Division at Statistics
+ For my first co-op work term I was part of the Modeling Division at Statistics
  Canada in Tunney's Pasture, Ottawa.
  This report is a description of my time there, the environment I was a
  part of, and the projects I was involved in.
- 
+ I will also give background on microsimulation, LifePaths, and the Modgen
+ programming language to provide context for the projects I participated
+ in.
+\end_layout
+
+\begin_layout Standard
+The work environment of Statistics Canada is structured, orderly, and often
+ slow-paced.
+ I was located on the 24th floor of the 26-story R.H.
+ Coats building at Tunney's Pasture.
+ The Modeling Division I was a part of is made up of about ten people, and
+ included PhDs, researchers, and another coop student (also from uOttawa).
+ We each had our own cubicle with high walls and a work computer.
+ None of the regular work computers are connected to the internet --occasionally
+ we had access to confidential data and having these computers connected
+ to the internet would be a security risk.
+ Each floor has a set of shared computers (one or two at each corner of
+ the floor) that are connected to the internet and can be used for browsing.
+ The hours, at least in the Modeling division, were flexible and the focus
+ was more on completing tasks than on completing a set amount of hours.
 \end_layout
 
 \begin_layout Standard
@@ -202,19 +221,6 @@ scenario
 \end_layout
 
 \begin_layout Standard
-I was located on the 24th floor of the 26-story R.H.
- Coats building at Tunney's Pasture.
- The Modeling Division I was a part of is made up of about ten people, and
- included PhDs, researchers, and another coop student (also from uOttawa).
- We each had our own cubicle with high walls and a work computer.
- None of the regular work computers are connected to the internet --occasionally
- we had access to confidential data and having these computers connected
- to the internet is considered a security risk.
- Each floor has a set of shared computers (one or two at each corner of
- the floor) that are connected to the internet and can be used for browsing.
-\end_layout
-
-\begin_layout Standard
 The LifePaths model was programmed in a language called 
 \emph on
 Modgen
@@ -237,16 +243,15 @@ Modgen
 \begin_layout Standard
 During my work term, the team was hired by Health Canada for a project with
  LifePaths.
- Health Canada wanted to understand the future costs of paying for different
- types of homecare for seniors.
+ Health Canada wanted to understand the future costs of healthcare for seniors.
  LifePaths can simulate people's lives in the future based on population
  projections and so create a projection of what the costs would be.
  Health Canada also asked the Modeling Division to investigate different
  scenarios: what would it be like if the government paid for 100% of the
  costs? What would it be like if the government paid for 80% of the costs
  and seniors the rest? LifePaths also allowed us to investigate how many
- people would even be able to pay for their care if they were required to.
- 
+ people would even be able to afford their care if they were required to
+ pay.
 \end_layout
 
 \begin_layout Standard
@@ -269,41 +274,6 @@ d, modules that were never used, and multiple different versions from people
  create a clean, releasable version of LifePaths.
  This clean version of LifePaths would also serve as a starting point for
  future LifePaths projects.
-\end_layout
-
-\begin_layout Section
-Tasks Completed
-\end_layout
-
-\begin_layout Standard
-While I was at StatCan I worked on the following things:
-\end_layout
-
-\begin_layout Itemize
-Created a prototype version of the HomeCare simulation module.
-\end_layout
-
-\begin_layout Itemize
-Introduced and used source control software to carry out the merge and track
- changes.
- This let me build a history of changes made that served as documentation.
-\end_layout
-
-\begin_layout Itemize
-Presented about the source control software I used (called 'git') to the
- team.
- I explained a bit about how it worked, how to use it, and how I was using
- it for LifePaths.
-\end_layout
-
-\begin_layout Itemize
-Validated that my merged version of LifePaths still behaved as expected
- by comparing it's output with previous versions of LifePaths and with real
- statistical data.
- This involved a suite of graphs that plotted various statistics.
- These statistics included population by province, unemployment rate since
- 1971, earnings by province, births by year, and many more.
- 
 \end_layout
 
 \begin_layout Section
@@ -337,8 +307,8 @@ ls, as opposed to modelling aggregate (or macro) statistics.
  (population size) by simulating the microdata (birth and death years) of
  individuals.
  When a simulation is complete LifePaths aggregates the data (in effect
- by conducting a survey) of the simulated individuals and outputs statistics
- that can be compared with real statistics.
+ by conducting a survey) of the simulated individuals and outputs tables
+ of statistics that can be compared with real statistics.
  
 \end_layout
 
@@ -346,7 +316,7 @@ ls, as opposed to modelling aggregate (or macro) statistics.
 A consequence of microsimulation is that it is possible to examine in details
  the lives of each simulated individual.
  Included with Modgen is a tool called the BioBrowser.
- BioBrowser graphically displays how a person's traits change in time.
+ BioBrowser graphically displays how a person's attributes change in time.
  For example, we can use BioBrowser to see a person's disability state (no
  disability, light disability, severe disability) throughout their life.
  This lets us verify that the lives of the people we're simulating make
@@ -381,8 +351,49 @@ Review of Economics and Statistics,
 
  Over time more and more statistical agencies have started their own microsimula
 tion models to address a whole host of issues.
- Other than LifePaths, Statistics Canada has microsimulation models for
+ Aside from LifePaths, Statistics Canada has microsimulation models for
  the tax and transfers system, health care analysis, and population projections.
+\end_layout
+
+\begin_layout Section
+Tasks Completed
+\end_layout
+
+\begin_layout Standard
+While I was at StatCan I worked on the following things:
+\end_layout
+
+\begin_layout Itemize
+I and another co-op student created a prototype version of a simulation
+ module that simulated homecare.
+\end_layout
+
+\begin_layout Itemize
+I merged two versions of LifePaths and produced a clean and releasable version
+ of LifePaths that will serve as the starting point for future projects.
+\end_layout
+
+\begin_layout Itemize
+I introduced and used source control software to carry out the merge and
+ track changes.
+ This let me build a history of changes that served as documentation.
+\end_layout
+
+\begin_layout Itemize
+I presented to the division about the source control software I used (called
+ 'git') to the team.
+ I explained about how it worked, how to use it, and how I was using it
+ for LifePaths.
+\end_layout
+
+\begin_layout Itemize
+I validated that my merged version of LifePaths still behaved as expected
+ by comparing it's output with previous versions of LifePaths and with real
+ statistical data.
+ This involved a suite of graphs that plotted various statistics.
+ These statistics included population by province, unemployment rate since
+ 1971, earnings by province, births by year, and many more.
+ 
 \end_layout
 
 \begin_layout Section
@@ -397,7 +408,7 @@ The LifePaths model is written in the Modgen language.
  and creates an executable file with it's own visual interface for running
  the simulation model.
  This allows statisticians to develop the model without the need of a programmer
- and lets the developer focus more on the details of the model and less
+ and lets the researcher focus more on the details of the model and less
  on the implementation of an interface.
  In short, Modgen is a language for specifying 
 \emph on
@@ -614,8 +625,8 @@ Time in LifePaths (and most Modgen simulations) is considered continuous.
 \emph on
 waiting times 
 \emph default
-for events are generated and the simulation jumps to the event that has
- the smallest waiting time.
+for events are generated and the simulation just jumps to the event that
+ has the smallest waiting time.
  Thus, the time function of an event must generate a waiting time for the
  event.
  These time functions can depend on all the other states of the Person.
@@ -734,7 +745,7 @@ actor Person {
 \end_layout
 
 \begin_layout Standard
-In this case, the time function is 
+In this case, the time function is called 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -747,7 +758,7 @@ timeChildEvent
 
 \end_inset
 
- and the event function is 
+ and the event function is called 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
 inline true
@@ -1046,7 +1057,7 @@ The two event functions are all that's needed to implement this simple model.
  From here you compile the model and Modgen creates an executable file that
  has a visual interface to the model.
  In the interface the user can specify the size of the population to simulate.
- To create some useful output, you can create tables with Modgen's tabling
+ To create some useful output, users can create tables with Modgen's tabling
  language using the variable 
 \begin_inset listings
 lstparams "basicstyle={\ttfamily}"
@@ -1101,7 +1112,7 @@ s the probability of having a child during age
  These modifications to the parameter don't require you to recompile the
  code, or even to have access to the code, and can be saved as a seperate
  scenario file with it's own output.
- In this way a researcher can create a set of 
+ This way, a researcher can create a set of 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1346,7 +1357,7 @@ The workflow for using a Modgen model is usually something like this:
 
 \begin_layout Enumerate
 \paragraph_spacing single
-Specify/Modify the scenario's parameters.
+Specify or Modify the scenario's parameters.
 \end_layout
 
 \begin_layout Enumerate
@@ -1426,9 +1437,9 @@ Before starting on any projects, the beginning of the work term was spent
  learning about Modgen and microsimulation and practicing with Modgen to
  create some simple models.
  I then used Modgen to participate in two projects.
- The first project was a contract job that came from Health Canada to understand
- costs of homecare in the future.
- This required adding a new module in LifePaths written in Modgen.
+ The first project was a contract job that came from Health Canada to study
+ the costs of healthcare for seniors in the future.
+ This required adding a new module for LifePaths written in Modgen.
  The second project was to merge the codebase of different versions of LifePaths
  and to produce a 'clean' and releasable version of LifePaths.
  The merge project involved reorganizing hundreds of lines of Modgen code.
@@ -1509,8 +1520,7 @@ other
  homecare.
  This simplification was made because of the very low numbers there were
  for some of the seven categories.
- Nursing homecare is when a nurse visits the home to provide some medical
- care.
+ Nursing homecare is when a nurse visits the home to provide medical care.
  Personal homecare is care related to day-to-day tasks (meal preparation,
  hygiene).
 \end_layout
@@ -1523,9 +1533,9 @@ From this data the simplest model that we could create was one that assigned
  To make this model you just count the number of people receiving each type
  of homecare grouping them by age, gender, province, and disability level
  and then divide by the total number of people receiving homecare.
- To know if a person receives homecare in the first place you calculate
- the proportion of people who receive homecare out of the entire population
- (or sample).
+ To know if a person receives homecare at all, the proportion of people
+ who receive homecare out of the entire population (or sample) is calculated
+ and used as the likelihood of receiving homecare.
 \end_layout
 
 \begin_layout Standard
@@ -1588,8 +1598,8 @@ It was also a problem when people wanted to collaborate together.
 To address some of these workflow problems I suggested using a tool that
  enables source control.
  Source control tracks history and changes made to a project, line-by-line.
- It would enable the ability to easily see who made what changes, and when
- they made them.
+ It would allow the ability to easily see who made what changes, and the
+ time that those changes were made.
  Source control also lets you manage different 
 \begin_inset Quotes eld
 \end_inset
@@ -1679,7 +1689,7 @@ There were two principal versions of LifePaths that needed to be merged.
 taxes in Canada.
  This capability, while conceivably useful, had just sat around in it's
  own folder seperated from the rest of LifePaths for years, and was never
- really used.
+ used.
  The other version was just a few months old and was considered to be the
  most recent 'release' version.
  It had up to date data on population projections and mortality, and had
@@ -1693,9 +1703,13 @@ Aside from there being two versions to merge, the previous release version
  was filled with code for hundreds and hundreds of output tables that few
  really understood.
  One of our goals was to pick just a few tables that would serve as example
- of the capability of the Modgen tabling language and remove the rest, releasing
- only these hand-picked tables.
- This ended up reducing our codebase by thousands of lines.
+ of the capability of the Modgen tabling language and to delete the rest,
+ releasing only these hand-picked tables.
+ This ended up reducing the codebase by 
+\emph on
+thousands 
+\emph default
+of lines.
 \end_layout
 
 \begin_layout Standard
@@ -1717,7 +1731,7 @@ branches
  This lets you open the file where the 'conflict' was found, see both versions
  of the different lines of code, and pick the version you want to keep.
  Sometimes you have to rewrite that section of the file to have both versions
- and have it still compile.
+ and still have it compile.
 \end_layout
 
 \begin_layout Standard
@@ -1765,11 +1779,11 @@ Overall my work term at StatCan was educational.
  their work was useful to them.
  I learned about the field of microsimulation and about how the LifePaths
  microsimulation model works.
- I also learned about the Modgen programming language and used it a lot
+ I also learned about the Modgen programming language and used it extensively
  in my work while at StatCan.
  I participated in the division's work with Health Canada and helped renew
- LifePaths by created a new, clean version of it.
- 
+ LifePaths by creating a new, clean version of if that can be released to
+ the public.
 \end_layout
 
 \begin_layout Standard
