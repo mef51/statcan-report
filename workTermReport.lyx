@@ -68,7 +68,11 @@
 \begin_body
 
 \begin_layout Title
-Work-Term Report 
+
+\series bold
+PHY3906 Work Term Report
+\series default
+ 
 \begin_inset Newline newline
 \end_inset
 
@@ -77,7 +81,15 @@ Microsimulation, LifePaths, and Source Control at Statistics Canada
 
 \begin_layout Author
 Mohammed A.
- Chamma
+ Chamma - 6379153
+\begin_inset Newline newline
+\end_inset
+
+Submitted to Serge Desgreniers
+\begin_inset Newline newline
+\end_inset
+
+May 9, 2014
 \end_layout
 
 \begin_layout Standard
