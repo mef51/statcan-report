@@ -1,0 +1,146 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass letter
+\begin_preamble
+\date{May 9, 2014}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 0
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout My Address
+Mohammed Chamma
+\begin_inset Newline newline
+\end_inset
+
+6379153
+\end_layout
+
+\begin_layout Send To Address
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Red fields are mandatory, green ones optional.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Signature
+Mohammed Afif Chamma
+\begin_inset Newline newline
+\end_inset
+
+Third-Year Honours BSc With Specialization in Physics-Mathematics
+\begin_inset Newline newline
+\end_inset
+
+6379153
+\end_layout
+
+\begin_layout Opening
+Dear Professor Desgreniers,
+\end_layout
+
+\begin_layout Standard
+Please find enclosed my work term report for my first CO-OP semester (PHY3906)
+ which I partook in from January 6 to April 25, 2014.
+ The work term followed my completion of the academic term 3A.
+\end_layout
+
+\begin_layout Standard
+I spent my work term at Statistics Canada as a Researcher in the Modelling
+ Division.
+ My supervisor was Miroslav Kucera, a PhD who also works as a Researcher.
+ 
+\end_layout
+
+\begin_layout Standard
+The title of my enclosed report is 
+\emph on
+Microsimulation, LifePaths, and Source Control at Statistics Canada
+\emph default
+, and in it is a description of the work environment, an overview of the
+ different projects the Modelling Division participates in, and a report
+ of the work I accomplished during my work term.
+\end_layout
+
+\begin_layout Standard
+The report is a product of my own work, and was graciously reviewed by my
+ supervisors Miroslav Kucera and Jennifer Jones, who provided me with feedback
+ and suggestions for improvement.
+ 
+\end_layout
+
+\begin_layout Closing
+Yours sincerely,
+\end_layout
+
+\begin_layout Location
+University of Ottawa
+\end_layout
+
+\end_body
+\end_document
