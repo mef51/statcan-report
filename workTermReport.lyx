@@ -118,8 +118,10 @@ I describe my work term as a researcher in the Modelling Division at Statistics
  The work revolved around a microsimulation model called LifePaths, which
  simulates the lives of Canadian Citizens and allows researchers to explore
  policy and social questions.
- During my term the division was contracted by Health Canada to study the
- costs of future senior care using LifePaths.
+ During my term the division was contracted by Health Canada to estimate
+ the affordability of long term care in the future using LifePaths.
+ This project included estimating the costs of future homecare and institutional
+ization.
  Most of the division's remaining time was focused on merging together different
  versions of LifePaths and preparing a clean and publicly releasable version
  of LifePaths that would serve as the basis of future work.
@@ -210,6 +212,8 @@ Why would you want to be able to create a virtual population that somehow
  matches the real population? Having a virtual population lets you make
  a change and observe the impact on the population, without harming anyone
  or wasting lots of money.
+ This enables researchers to assess changes in tax laws and other policies
+ before implementing them in real society.
  LifePaths is programmed with a set of 
 \emph on
 parameters.
@@ -238,8 +242,8 @@ The LifePaths model was programmed in a language called
 Modgen
 \emph default
 .
- Modgen was developped a few years ago by Statistics Canada and is used
- (as the name suggests) to generate socio-economic models.
+ Modgen was first developped in 1993 by Statistics Canada and is used (as
+ the name suggests) to generate socio-economic models.
  Modgen is a language that compiles to the more standard C++ programming
  language, used worldwide in all sorts of software.
  The benefit of Modgen is that it is simpler to write than C++.
@@ -257,7 +261,8 @@ During my work term, the team was hired by Health Canada for a project with
  LifePaths.
  Health Canada wanted to understand the future costs of healthcare for seniors.
  LifePaths can simulate people's lives in the future based on population
- projections and so create a projection of what the costs would be.
+ projections and so, combined with distributions of income and the cost
+ of care, create a projection of what the costs would be.
  Health Canada also asked the Modelling Division to investigate different
  scenarios: what would it be like if the government paid for 100% of the
  costs? What would it be like if the government paid for 80% of the costs
@@ -364,7 +369,8 @@ Review of Economics and Statistics,
  Over time more and more statistical agencies have started their own microsimula
 tion models to address a whole host of issues.
  Aside from LifePaths, Statistics Canada has microsimulation models for
- the tax and transfers system, health care analysis, and population projections.
+ the tax and transfers system, health care analysis, population projections,
+ and human resources.
 \end_layout
 
 \begin_layout Section
@@ -432,7 +438,7 @@ events
 \emph default
 that can happen to them.
  In LifePaths, the actor is a Person and the events are life events.
- Persons can get married, suffer an accident, go to university, have children,
+ Persons can get married, become disabled, go to university, have children,
  and so on.
 \end_layout
 
@@ -1535,6 +1541,16 @@ other
  Nursing homecare is when a nurse visits the home to provide medical care.
  Personal homecare is care related to day-to-day tasks (meal preparation,
  hygiene).
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Other
+\begin_inset Quotes erd
+\end_inset
+
+ homecare covers things like physiotherapy, occupational therapy and speech
+ therapy.
 \end_layout
 
 \begin_layout Standard
