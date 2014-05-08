@@ -109,7 +109,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Abstract
-I describe my work term as a researcher in the Modeling Division at Statistics
+I describe my work term as a researcher in the Modelling Division at Statistics
  Canada from January to April of 2014.
  Specifically I give an overview of the work environment at the government,
  an introduction to the field of microsimulation, a description of a programming
@@ -141,7 +141,7 @@ Introduction
 \begin_layout Standard
 My name is Mohammed.
  I'm a third-year student in Physics-Mathematics.
- For my first co-op work term I was part of the Modeling Division at Statistics
+ For my first co-op work term I was part of the Modelling Division at Statistics
  Canada in Tunney's Pasture, Ottawa.
  This report is a description of my time there, the environment I was a
  part of, and the projects I was involved in.
@@ -155,20 +155,20 @@ The work environment of Statistics Canada is structured, orderly, and often
  slow-paced.
  I was located on the 24th floor of the 26-story R.H.
  Coats building at Tunney's Pasture.
- The Modeling Division I was a part of is made up of about ten people, and
- included PhDs, researchers, and another coop student (also from uOttawa).
+ The Modelling Division I was a part of is made up of about ten people,
+ and included PhDs, researchers, and another coop student (also from uOttawa).
  We each had our own cubicle with high walls and a work computer.
  None of the regular work computers are connected to the internet --occasionally
  we had access to confidential data and having these computers connected
  to the internet would be a security risk.
  Each floor has a set of shared computers (one or two at each corner of
  the floor) that are connected to the internet and can be used for browsing.
- The hours, at least in the Modeling division, were flexible and the focus
+ The hours, at least in the Modelling division, were flexible and the focus
  was more on completing tasks than on completing a set amount of hours.
 \end_layout
 
 \begin_layout Standard
-The Modeling Division is responsible for creating mathematical and computer
+The Modelling Division is responsible for creating mathematical and computer
  simulation models of Canadian citizens.
  We use real statistical data collected by StatCan to make these models
  representative of real society.
@@ -258,7 +258,7 @@ During my work term, the team was hired by Health Canada for a project with
  Health Canada wanted to understand the future costs of healthcare for seniors.
  LifePaths can simulate people's lives in the future based on population
  projections and so create a projection of what the costs would be.
- Health Canada also asked the Modeling Division to investigate different
+ Health Canada also asked the Modelling Division to investigate different
  scenarios: what would it be like if the government paid for 100% of the
  costs? What would it be like if the government paid for 80% of the costs
  and seniors the rest? LifePaths also allowed us to investigate how many
@@ -1463,7 +1463,7 @@ Homecare Project
 \end_layout
 
 \begin_layout Standard
-Around the beginning of the work term, the Modeling Division was approached
+Around the beginning of the work term, the Modelling Division was approached
  by Health Canada.
  They wanted to use LifePaths to get an idea of what the costs of senior
  care would be like in the future.
